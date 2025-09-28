@@ -203,3 +203,135 @@ footer a:hover {
   position: relative;
   z-index: 1;
 }
+
+/* --- Statistics Section --- */
+#stats .stat-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* --- Features Section (Enhanced) --- */
+.feature-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(255, 153, 51, 0.1);
+    color: var(--primary-color);
+}
+
+/* --- Featured Destinations Section --- */
+.destination-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.destination-card img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/* --- Testimonials Section --- */
+.testimonial-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    font-style: italic;
+    height: 100%;
+}
+.testimonial-card .rating {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+.testimonial-card cite {
+    font-style: normal;
+    font-weight: 600;
+    color: #555;
+}
+/* --- NEW: Statistics Section --- */
+#stats .stat-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* --- NEW: Enhanced Features Section --- */
+.feature-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(255, 153, 51, 0.1);
+    color: var(--primary-color);
+}
+
+/* --- NEW: Featured Destinations Section --- */
+.destination-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    height: 100%;
+}
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.destination-card img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/* --- NEW: Testimonials Section --- */
+.testimonial-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    font-style: italic;
+    height: 100%;
+}
+.testimonial-card .rating {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+.testimonial-card cite {
+    font-style: normal;
+    font-weight: 600;
+    color: #555;
+}
