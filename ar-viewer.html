@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR View - TravelVerse</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+
+  <style>
+    model-viewer::part(annotation) {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 14px;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+    }
+    .hotspot-btn {
+      background: #0d6efd;
+      color: white;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .info-box {
+      display: none;
+      background: #f8f9fa;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+
+  <div class="container-fluid mt-4">
+    <h3 id="monument-title" class="text-center mb-3">Loading Monument...</h3>
+
+    <!-- 3D Model with Hotspots -->
+    <model-viewer id="monument-viewer"
+                  ar ar-modes="webxr scene-viewer quick-look"
+                  camera-controls
+                  shadow-intensity="1"
+                  style="width: 100%; height: 75vh;">
+      <!-- Hotspot Dome -->
+      <button class="hotspot-btn" slot="hotspot-dome"
+              data-position="0m 0m 5m" data-normal="0m 1m 0m">
+        🏛 Dome
+      </button>
+
+      <!-- Hotspot Minaret -->
+      <button class="hotspot-btn" slot="hotspot-minaret"
+              data-position="4m 0m 5m" data-normal="0m 1m 0m">
+        🕌 Minaret
+      </button>
+    </model-viewer>
+
+    <!-- Info Section for Hotspots -->
+    <div id="hotspot-info" class="mt-3">
+      <div id="info-dome" class="info-box">
+        <p><strong>🏛 Dome:</strong> The Taj Mahal's dome is 35m high and perfectly symmetrical, representing the pinnacle of Mughal architecture.</p>
+      </div>
+      <div id="info-minaret" class="info-box">
+        <p><strong>🕌 Minarets:</strong> The four minarets were designed with a slight outward tilt, so they would collapse away from the tomb during an earthquake.</p>
+      </div>
+    </div>
+
+    <!-- QR Code Dropdown for Desktop -->
+    <div class="text-center mt-3 d-none d-md-block">
+      <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#qrCollapse">
+        📱 Show QR Code for Mobile AR
+      </button>
+      <div class="collapse mt-2" id="qrCollapse">
+        <p>Scan to view this model in AR on your phone:</p>
+        <div id="qrcode" class="d-flex justify-content-center"></div>
+      </div>
+    </div>
+
+    <!-- Audio Narrations -->
+    <audio id="audio-dome" src="assets/audio/taj_dome_explained.mp3"></audio>
+    <audio id="audio-minaret" src="assets/audio/taj_minaret_explained.mp3"></audio>
+  </div>
+
+  
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const modelFromQuery = urlParams.get("model");
+      const titleFromQuery = urlParams.get("title");
+
+      const data = JSON.parse(sessionStorage.getItem('selectedMonument'));
+
+      const modelPath = modelFromQuery || data?.model || "assets/models/taj_mahal.glb";
+      const title = titleFromQuery || data?.title || "Heritage Model";
+
+      // Load Model
+      const modelViewer = document.getElementById('monument-viewer');
+      document.getElementById('monument-title').textContent = title;
+      modelViewer.setAttribute('src', modelPath);
+
+      // Generate QR Code (desktop only)
+      if (!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        const pageUrl = new URL(window.location.href);
+        const viewerUrl = `${pageUrl.origin}${pageUrl.pathname}?model=${encodeURIComponent(modelPath)}&title=${encodeURIComponent(title)}`;
+        new QRCode(document.getElementById("qrcode"), {
+          text: viewerUrl,
+          width: 128,
+          height: 128
+        });
+      }
+
+      // Hotspot Click Listeners
+      document.querySelector('[slot="hotspot-dome"]').addEventListener('click', () => {
+        document.getElementById('audio-dome').play();
+        toggleInfo('info-dome');
+      });
+
+      document.querySelector('[slot="hotspot-minaret"]').addEventListener('click', () => {
+        document.getElementById('audio-minaret').play();
+        toggleInfo('info-minaret');
+      });
+
+      // Toggle function for info boxes
+      function toggleInfo(id) {
+        document.querySelectorAll('.info-box').forEach(el => el.style.display = "none");
+        document.getElementById(id).style.display = "block";
+      }
+
+      // Load Navbar & Footer
+      fetch("partials/navbar.html").then(res => res.text()).then(data => {
+        document.getElementById("navbar-container").innerHTML = data;
+      });
+      fetch("partials/footer.html").then(res => res.text()).then(data => {
+        document.getElementById("footer-container").innerHTML = data;
+      });
+    });
+  </script>
+</body>
+</html>

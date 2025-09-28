@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quest Detail - TravelVerse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div id="navbar-container"></div>
+
+    <div class="container my-5">
+        <!-- Title will be loaded by JS -->
+        <h2 class="text-center mb-4" id="quest-title">Loading Quest...</h2>
+        
+        <!-- YouTube video or placeholder will be loaded here -->
+        <div id="quest-ar-placeholder" class="mb-4">
+            <div class="ar-placeholder"></div>
+        </div>
+
+        <!-- Story Section -->
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h4>The Story</h4>
+                <div>
+                    <button class="btn btn-sm btn-outline-secondary">English</button>
+                    <button class="btn btn-sm btn-outline-secondary">हिन्दी</button>
+                </div>
+            </div>
+            <div class="card-body" id="quest-story">
+                <!-- Story content will be loaded by JS -->
+            </div>
+        </div>
+
+        <!-- Gamification Block -->
+        <div class="card mb-4">
+            <div class="card-header"><h4>Complete the Quest!</h4></div>
+            <div class="card-body" id="quest-gamification">
+                <!-- This is the new, crucial div where the quiz will be injected -->
+                <div id="quiz-content">
+                    <p>Loading quiz...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
