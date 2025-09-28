@@ -6,6 +6,8 @@
     <title>TravelVerse - Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -13,31 +15,168 @@
     <div id="navbar-container"></div>
 
     <header class="hero-section">
-    <!-- The Video Background -->
-    <video playsinline autoplay muted loop poster="assets/images/hero-bg.jpg" id="bgvideo">
-        <source src="assets/videos/Cinematic_Heritage_AR_VR_Transition_Video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="hero-content">
-    <!-- The Hero Content (Text and Buttons) -->
-    <div class="container">
-        <h1 class="display-3 fw-bold">TravelVerse – Explore India’s Heritage in AR/VR</h1>
-        <p class="lead my-4">Step into the past and experience history like never before.</p>
-        <a href="map.html" class="btn btn-primary btn-lg">Start Exploring</a>
-        <a href="about.html" class="btn btn-outline-light btn-lg">Learn More</a>
-    </div>
-    </div>
-</header>
-
-    <section class="py-5">
-        <div class="container text-center">
-            <h2 class="mb-5">Key Features</h2>
-            <div class="row">
-                <div class="col-md-3"><h3>Gamification</h3><p>Learn through quests, puzzles, and leaderboards.</p></div>
-                <div class="col-md-3"><h3>Multilingual</h3><p>Stories in your language for a deeper connection.</p></div>
-                <div class="col-md-3"><h3>Artisan Marketplace</h3><p>Support local craftsmen by purchasing unique art.</p></div>
-                <div class="col-md-3"><h3>Sustainable Tourism</h3><p>Explore digitally and help preserve our monuments.</p></div>
+        <video playsinline autoplay muted loop poster="assets/images/hero-bg.jpg" id="bgvideo">
+            <source src="assets/videos/Cinematic_Heritage_AR_VR_Transition_Video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="display-3 fw-bold">TravelVerse – Explore India’s Heritage in AR/VR</h1>
+                <p class="lead my-4">Step into the past and experience history like never before.</p>
+                <a href="map.html" class="btn btn-primary btn-lg">Start Exploring</a>
+                <a href="about.html" class="btn btn-outline-light btn-lg">Learn More</a>
             </div>
+        </div>
+    </header>
+
+    <!-- Why TravelVerse? Section -->
+    <section id="why" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-4">Why TravelVerse?</h2>
+            <p class="lead mb-5 mx-auto" style="max-width: 800px;">
+                Heritage tourism today often lacks deep engagement. Most digital platforms are static and non-interactive, failing to capture the imagination of a new generation. TravelVerse was created to solve this problem by making history accessible, engaging, and unforgettable through immersive technology.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Statistics Counter Section -->
+    <section id="stats" class="py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <h3 class="display-4 fw-bold stat-number" data-target="100">10</h3>
+                    <p class="lead">Monuments Digitized</p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="display-4 fw-bold stat-number" data-target="5000">2000</h3>
+                    <p class="lead">Active Explorers</p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="display-4 fw-bold stat-number" data-target="50">3000</h3>
+                    <p class="lead">Artisans Supported</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section (Enhanced) -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-5">Our Features</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon mb-3"><i class="fas fa-map-marked-alt fa-2x"></i></div>
+                        <h3>Interactive Map</h3>
+                        <p>Navigate a stunning map of India to discover heritage sites state by state.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon mb-3"><i class="fas fa-puzzle-piece fa-2x"></i></div>
+                        <h3>Gamified Learning</h3>
+                        <p>Engage with history through exciting quests, treasure hunts, and puzzles.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon mb-3"><i class="fas fa-language fa-2x"></i></div>
+                        <h3>Multilingual Stories</h3>
+                        <p>Experience narrations and guides in regional languages for a deeper connection.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon mb-3"><i class="fas fa-store fa-2x"></i></div>
+                        <h3>Artisan Marketplace</h3>
+                        <p>Support local culture by purchasing authentic crafts directly from artisans.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Destinations Section -->
+    <section id="destinations" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Featured Destinations</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card destination-card">
+                        <img src="https://placehold.co/600x400/FF9933/FFFFFF?text=Taj+Mahal" class="card-img-top" alt="Taj Mahal">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Popular</span>
+                            <h5 class="card-title">Taj Mahal, Agra</h5>
+                            <p class="card-text">Experience the iconic symbol of love in stunning augmented reality.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card destination-card">
+                        <img src="https://placehold.co/600x400/4A2E2A/FFFFFF?text=Hampi" class="card-img-top" alt="Hampi">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">New Quest</span>
+                            <h5 class="card-title">Hampi, Karnataka</h5>
+                            <p class="card-text">Explore the sprawling ruins of the Vijayanagara Empire.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card destination-card">
+                        <img src="https://placehold.co/600x400/DD5858/FFFFFF?text=Konark" class="card-img-top" alt="Konark Sun Temple">
+                        <div class="card-body">
+                             <span class="badge bg-info mb-2">AR Ready</span>
+                            <h5 class="card-title">Konark Sun Temple</h5>
+                            <p class="card-text">Witness the monumental chariot of the Sun God like never before.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">What Our Explorers Say</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p>"TravelVerse brought history to life for my kids. The gamification is brilliant!"</p>
+                        <div class="rating">★★★★★</div>
+                        <cite>— Priya S., Educator</cite>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p>"Seeing the Taj Mahal in AR in my living room was breathtaking. A must-try experience!"</p>
+                        <div class="rating">★★★★★</div>
+                        <cite>— Rohan M., Tech Enthusiast</cite>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p>"I love that I can support local artisans while learning about their culture. A truly unique platform."</p>
+                        <div class="rating">★★★★★</div>
+                        <cite>— Anika D., Art Lover</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+     <!-- Newsletter Signup -->
+    <section id="newsletter" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-3">Join the Adventure</h2>
+            <p class="lead mb-4">Subscribe to our newsletter for the latest updates on new monuments and quests.</p>
+            <form id="newsletter-form" class="mx-auto" style="max-width: 500px;">
+                <div class="input-group">
+                    <input type="email" id="newsletter-email" class="form-control" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </div>
+                <div id="newsletter-feedback" class="mt-2"></div>
+            </form>
         </div>
     </section>
 
@@ -47,3 +186,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
